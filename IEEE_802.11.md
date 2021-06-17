@@ -35,3 +35,8 @@
 | AirMagnet Survey PRO       | Design   | Pay      |                                                       |
 |                            |          |          |                                                       |
 | Python-wifi-survey-heatmap | Analysis | Free     | https://github.com/jantman/python-wifi-survey-heatmap |
+
+# Openwrt Hardwares
+| Vendor   | Model  | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
+| -------- | ------ | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Totolink | X5000R | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin) | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
