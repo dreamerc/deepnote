@@ -1,6 +1,6 @@
-802.11 Design Datasheets/Suggestions
+# 802.11 Design Datasheets/Suggestions
 
-# Standards
+## Standards
 | Name     | Freq(Hz)    | Bandwidth(Hz)        | Modulator                | MaxSpeed(bit/s)                                           |
 | -------- | ----------- | -------------------- | ------------------------ | --------------------------------------------------------- |
 | 802.11a  | 5 G         | 5/10/20 M            | OFDM                     | 13.5/27/54 M                                              |
@@ -12,7 +12,7 @@
 | 802.11g  | 2.4 G       | 20 M                 | OFDM                     | 54 M                                                      |
 | 802.11n  | 2.4 G       | 20/40 M              | MIMO-OFDM                | 288.8/600 M                                               |
 
-# Non-overlapping Channels
+## Non-overlapping Channels
 | Freq(Hz) | Bandwidth(Hz) | Channels                                                                                    |
 | -------- | ------------- | ------------------------------------------------------------------------------------------- |
 | 2.4 G    | 20 M          | 1,6,11,14                                                                                   |
@@ -24,19 +24,52 @@
 |          | 40 M          | 36,44,52,60,100,108,116,124,132,140,149,157,167                                             |
 |          | 80 M          | 40,52,64,104,116,128,144,149,161                                                            |
 
-# Tools
-| Name                       | Type     | Free/Pay | Link                                                  |
-| -------------------------- | -------- | -------- | ----------------------------------------------------- |
-| TamoGraph Site Survey      | Design   | Pay      |                                                       |
-| Ekahau HeatMapper          | Design   | Free/Pay |                                                       |
-| SolarWinds Wifi Heat Map   | Design   | Pay      |                                                       |
-| NetSpot                    | Design   | Pay      |                                                       |
-| VisiWave                   | Design   | Pay      |                                                       |
-| AirMagnet Survey PRO       | Design   | Pay      |                                                       |
-|                            |          |          |                                                       |
-| Python-wifi-survey-heatmap | Analysis | Free     | https://github.com/jantman/python-wifi-survey-heatmap |
+## Tools/Hardwares
+### Commercial 
+| Name                                   | Type           |
+| -------------------------------------- | -------------- |
+| TamoGraph Site Survey                  | Design         |
+| Ekahau HeatMapper                      | Design         |
+| SolarWinds Wifi Heat Map               | Design         |
+| NetSpot                                | Design         |
+| VisiWave                               | Design         |
+| AirMagnet Survey PRO                   | Design         |
+|                                        |                |
+| Paessler PRTG Network Monitor          | Monitoring     |
+| SolarWinds Network Performance Monitor | Monitoring     |
+| Tarlogic Acrylic Wi-Fi Home            | Monitoring     |
+| Microsoft Wifi Analyzer                | Monitoring     |
+| Microsoft WiFi Commander               | App:Monitoring |
+| NetCut                                 | Monitoring     |
+| InSSIDer                               | Monitoring     |
+| WiFi Analyzer                          | App:Monitoring |
+| Vistumbler                             | Monitoring     |
+|                                        |                |
+| Wireshark                              | Debug          |
+|                                        |                |
+| Ubiquiti Unifi Controller              | AllInOne       |
+| Fortinet FortiWifi                     | AllInOne       |
+| MikroTik Wifi                          | AllInOne       |
+| Ruckus Networks                        | AllInOne       |
+| Aruba                                  | AllInOne       |
+| WatchGuard                             | AllInOne       |
+| Cisco                                  | AllInOne       |
+|                                        |                |
+| Tektronix                              | Tester         |
+| Rohde & Schwarz                        | Tester         |
+| Anritsu                                | Tester         |
+| Keysight                               | Tester         |
+| NetAlly                                | Tester         |
+| CSL                                    | Tester         |
+| Flurk                                  | Tester         |
 
-# Openwrt Hardwares
+
+### Draft
+| Name                       | Type     | Free | Link                                                                                        |
+| -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------- |
+| Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
+
+## Openwrt Hardwares
 | Vendor   | Model  | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
 | -------- | ------ | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Totolink | X5000R | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin) | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
