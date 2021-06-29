@@ -1,5 +1,9 @@
 # 802.11 Design Datasheets/Suggestions
 
+* Wifi 6 = 802.11ax
+* Wifi 5 = 802.11ac
+* Wifi 4 = 802.11n
+
 ## Standards
 | Name     | Freq(Hz)    | Bandwidth(Hz)        | Modulator                | MaxSpeed(bit/s)                                           |
 | -------- | ----------- | -------------------- | ------------------------ | --------------------------------------------------------- |
@@ -24,7 +28,36 @@
 |          | 40 M          | 36,44,52,60,100,108,116,124,132,140,149,157,167                                             |
 |          | 80 M          | 40,52,64,104,116,128,144,149,161                                                            |
 
+![img](http://web.archive.org/web/20150821031013im_/http://www.cc.ntu.edu.tw/chinese/epaper/0024/201303202409001.jpg) From NTU CC EPaper
+
+## CRDA Code
+
+Get Device Code
+
+```bash
+# iw reg get
+global
+country TW: DFS-FCC
+        (2400 - 2483 @ 40), (N/A, 30), (N/A)
+        (5150 - 5250 @ 80), (N/A, 23), (N/A), AUTO-BW
+        (5250 - 5350 @ 80), (N/A, 23), (0 ms), DFS, AUTO-BW
+        (5470 - 5730 @ 160), (N/A, 23), (0 ms), DFS
+        (5725 - 5850 @ 80), (N/A, 30), (N/A)
+        (57000 - 66000 @ 2160), (N/A, 40), (N/A)
+```
+
+Linux Kernel CRDA Source :
+
+```http
+https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/
+```
+
+## DFS and Weather radar
+
+DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working) 
+
 ## Tools/Hardwares
+
 ### Commercial 
 | Name                                   | Type           |
 | -------------------------------------- | -------------- |
@@ -54,6 +87,8 @@
 | Aruba                                  | AllInOne       |
 | WatchGuard                             | AllInOne       |
 | Cisco                                  | AllInOne       |
+| Linksys                                | AllInOne       |
+| NetGear                                | AllInOne       |
 |                                        |                |
 | Tektronix                              | Tester         |
 | Rohde & Schwarz                        | Tester         |
@@ -62,6 +97,15 @@
 | NetAlly                                | Tester         |
 | CSL                                    | Tester         |
 | Flurk                                  | Tester         |
+|                                        |                |
+| ASUS(Taiwan)                           | Device Vendor  |
+| D-Link(Taiwan)                         | Device Vendor  |
+| TP-Link(China)                         | Device Vendor  |
+| Zyxel(Taiwan)                          | Device Vendor  |
+| DrayTek(Taiwan)                        | Device Vendor  |
+| Tenda/騰達(China)                      | Device Vendor  |
+| Totolink(Korea)                        | Device Vendor  |
+| EDIMAX                                 | Device Vendor  |
 
 
 ### Draft
@@ -73,3 +117,9 @@
 | Vendor   | Model  | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
 | -------- | ------ | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Totolink | X5000R | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin) | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
+
+# Ref
+
+* https://openwrt.org/docs/guide-user/network/wifi/wifi_countrycode
+
+* http://web.archive.org/web/20150821031013/http://chunchaichang.blogspot.tw/
