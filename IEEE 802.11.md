@@ -1,5 +1,6 @@
 # 802.11 Design Datasheets/Suggestions
 
+* Wifi 6E = 802.11ax(6G)
 * Wifi 6 = 802.11ax
 * Wifi 5 = 802.11ac
 * Wifi 4 = 802.11n
@@ -20,21 +21,21 @@
 More information about MCS and Speed, please check [MCS Table (Updated with 802.11ax Data Rates)](https://semfionetworks.com/blog/mcs-table-updated-with-80211ax-data-rates/) and [Aruba 802.11AX White Paper](https://www.arubanetworks.com/assets/wp/WP_802.11AX.pdf)
 
 ## Non-overlapping Channels
-| Freq(Hz) | Bandwidth(Hz) | Channels                                                                                    |
-| -------- | ------------- | ------------------------------------------------------------------------------------------- |
-| 2.4 G    | 20 M          | 1,6,11(,14)                                                                                 |
-|          | 40 M          | 1,6,11                                                                                      |
-|          | 80 M          | 3,9                                                                                         |
-|          | 80+80 M       | 3,9                                                                                         |
-|          | 160 M         | 5                                                                                           |
-| 5 G      | 20 M          | 36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140,144,149,153,157,161,165 |
-|          | 40 M          | 36,44,52,60,100,108,116,124,132,140,149,157,167                                             |
-|          | 80 M          | 40,52,64,104,116,128,144,149,161                                                            |
+
+| Freq(Hz) | Bandwidth(Hz) | Channels                                                                                                               |
+| -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 2.4 G    | 20 M          | 1,6,11(,14)                                                                                                            |
+|          | 40 M          | 1,6,11                                                                                                                 |
+|          | 80 M          | 3,9                                                                                                                    |
+|          | 80+80 M       | 3,9                                                                                                                    |
+|          | 160 M         | 5                                                                                                                      |
+| 5 G      | 20 M          | 32,36,40,44,48,52,56,60,64,68,96,100,104,108,112,116,120,124,128,132,136,140,144,149,153,157,161,165(,167,169,173,177) |
+|          | 40 M          | 36,44,52,60,100,108,116,124,132,140,149,157(,167,175)                                                                  |
+|          | 80 M          | 42,58,106,122,138,155(,171)                                                                                            |
+|          | 160 M         | 50,114(,163)                                                                                                           |
 
 
-![img](http://web.archive.org/web/20150821031013im_/http://www.cc.ntu.edu.tw/chinese/epaper/0024/201303202409001.jpg) 
-
-From NTU CC EPaper
+![img](http://web.archive.org/web/20150821031013im_/http://www.cc.ntu.edu.tw/chinese/epaper/0024/201303202409001.jpg) From NTU CC EPaper
 
 ## CRDA Code
 
@@ -63,9 +64,10 @@ https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/
 DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working) 
 
 ## Tips
-* Check Device Capabilities (AP)
+* Check Device Capabilities 
 ```bash
 # iw dev <name> link
+# iw phy
 ```
 
 ## Tools/Hardwares
@@ -126,12 +128,11 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 | Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
 
 ## Openwrt Hardwares
-| Vendor   | Model                                                                                        | Speed Data                   | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
-| -------- | -------------------------------------------------------------------------------------------- | ---------------------------- | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Totolink | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2*2 , 11n HT40 , 11ax VHT160 | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
+| Vendor   | Model                                                                                        | Speed Data                                | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
+| -------- | -------------------------------------------------------------------------------------------- | ----------------------------              | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Totolink | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2*2 , 11n HT40 , 11ac VHT160 , 11ax HE160 | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
 
 # Ref
 
 * https://openwrt.org/docs/guide-user/network/wifi/wifi_countrycode
-
 * http://web.archive.org/web/20150821031013/http://chunchaichang.blogspot.tw/
