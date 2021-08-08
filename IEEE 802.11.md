@@ -206,3 +206,4 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 
 * https://openwrt.org/docs/guide-user/network/wifi/wifi_countrycode
 * http://web.archive.org/web/20150821031013/http://chunchaichang.blogspot.tw/
+* https://wikidevi.wi-cat.ru/List_of_802.11ax_Hardware (Wifi6 Hardware Datasheet Wiki)
