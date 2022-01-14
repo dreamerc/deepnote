@@ -1,6 +1,6 @@
 # 802.11 Design Datasheets/Suggestions
 
-* Wifi 6E = 802.11ax(6G)
+* Wifi 6E = 802.11ax(6G) = Wifi 6 Release 2
 * Wifi 6 = 802.11ax
 * Wifi 5 = 802.11ac
 * Wifi 4 = 802.11n
@@ -198,13 +198,14 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 | -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------- |
 | Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
 
-## Openwrt Hardwares
-| Vendor   | Model                                                                                        | Speed Data                                                                          | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
-| -------- | -------------------------------------------------------------------------------------------- | ----------------------------                                                        | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Totolink | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2*2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
+## OpenWRT Hardwares
+| Vendor   | Model                                                                                                                                                  | Speed Data                                                                          | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
+| -------- | --------------------------------------------------------------------------------------------                                                           | ----------------------------                                                        | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Totolink | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) , <br> FCC-ID : X7DIP04433 , <br> NCC-ID : CCAP20LP1980T9 | 2*2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
 
 # Ref
 
 * https://openwrt.org/docs/guide-user/network/wifi/wifi_countrycode
 * http://web.archive.org/web/20150821031013/http://chunchaichang.blogspot.tw/
 * https://wikidevi.wi-cat.ru/List_of_802.11ax_Hardware (Wifi6 Hardware Datasheet Wiki)
+* https://cdn.rohde-schwarz.com/tw/downloads_47/common_library_47/brochures_and_datasheets_47/1MA222_802.11ax_A.pdf (R&S 802.11ax 技術介紹白皮書)
