@@ -203,6 +203,15 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 | -------- | --------------------------------------------------------------------------------------------                                                           | ----------------------------                                                        | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Totolink | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) , <br> FCC-ID : X7DIP04433 , <br> NCC-ID : CCAP20LP1980T9 | 2*2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
 
+## Certifcations
+* RF Model Standard
+** [FCC ID Search](https://www.fcc.gov/oet/ea/fccid)
+** [NCC 型式認證資料查詢](https://nccmember.ncc.gov.tw/Application/Fun/Fun016.aspx)
+** [技術基準適合証明等を受けた機器の検索](https://www.tele.soumu.go.jp/giteki/SearchServlet?pageID=js01)
+** [Search KC Certification Status](https://ccac.rra.go.kr/en/view/sub201020.jsp)
+** [ERAC National Certification Database](https://equipment.erac.gov.au/Public/)
+** [IMDA Equipment Search](https://eservice.imda.gov.sg/tls/searchEquipment.action)
+
 # Ref
 
 * https://openwrt.org/docs/guide-user/network/wifi/wifi_countrycode
