@@ -90,3 +90,13 @@ docker exec -it huginn /bin/bash -c 'mkdir -p ~/tmp/sqltest; curl https://raw.gi
 
 WebClient cause job stuck
 https://github.com/huginn/huginn/pull/1892/files
+
+# Node Red
+- preconfig (rootless)
+```bash
+chown 100999:100999 docker-node_red
+```
+- docker run
+```bash
+docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered nodered/node-red
+```
