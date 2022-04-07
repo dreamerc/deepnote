@@ -1,8 +1,19 @@
-Locales : [中文版](#chinese)
+Locales : [English](#english) / [中文版](#chinese)
+
+------
+
 This document is for redirecting multiple screencasts between desktops.
 It requires Linux and Docker skill.
 
 # English
+## Design and Requirement 
+- Systems
+ - Server : Linux Environment with Docker installed.  (Linux)
+ - Client Sender : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
+ - Client Receiver : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
+- Network
+ - IP reachable , Server needs Port <ins>80/443</ins> (HTTP) **for Client Receiver** and <ins>1935</ins> (RTMP) **for Client Sender** .
+
 ## Server (Linux Desktop/Server/Virtual Machine)
 ### nginx-rtmp
 Run the following command :
