@@ -322,4 +322,4 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
 
 | Name                                                        | Spec                         | Image                     | Software              | Vendor | FCC                  |
 | ----------------------------------------------------------- | ---------------------------- | ------------------------- | --------------------- | ------ | -------------------- |
-| 米家人體感應器 <br> Mi Motion Sensor <br> Model : RTCGQ01LM | Zigbee <br> Battery : CR2450 | ![](mi_motion_sensor.png) | Xiaomi Zigbee Gateway | Xiaomi | NCC : CCAK17LP1420T7 |
+| 米家人體感應器 <br> Mi Motion Sensor <br> Model : RTCGQ01LM | Zigbee <br> Battery : CR2450 | ![](images/mi_motion_sensor.png) | Xiaomi Zigbee Gateway | Xiaomi | NCC : CCAK17LP1420T7 |
