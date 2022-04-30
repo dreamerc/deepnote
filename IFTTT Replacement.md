@@ -317,8 +317,9 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
 			-p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
 ```
  - Sensor
+  - Hack
+   - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
+
 | Name                                                        | Spec                         | Image                     | Software              | Vendor | FCC                  |
 | ----------------------------------------------------------- | ---------------------------- | ------------------------- | --------------------- | ------ | -------------------- |
 | 米家人體感應器 <br> Mi Motion Sensor <br> Model : RTCGQ01LM | Zigbee <br> Battery : CR2450 | ![](mi_motion_sensor.png) | Xiaomi Zigbee Gateway | Xiaomi | NCC : CCAK17LP1420T7 |
-  - Hack
-   - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
