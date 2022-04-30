@@ -6,7 +6,8 @@
 * [Huginn](https://github.com/huginn/huginn)
 * [Active Workflow](https://github.com/automaticmode/active_workflow)
 * [Node Red](https://nodered.org/)
-* [Home Assistant](https://www.home-assistant.io/) , with support
+* [Home Assistant](https://www.home-assistant.io/) , with support (SmartHome)
+* [Domoticz](https://domoticz.com/) (SmartHome)
 
 ### Huginn
 
@@ -262,7 +263,62 @@ docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered no
 
 # Home Assistant
 - Google , Alexa , Apple support with payment
+## Request
+- If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker).
+## Run
 ```bash
 docker pull ghcr.io/home-assistant/home-assistant:stable
 docker run -it --rm --name homeassistant -v ~/docker-home-assistant/config:/config -v /etc/localtime:/etc/localtime:ro -p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
 ```
+
+## Hardware
+### Wifi
+
+| Name                                                                                      | Spec                                                                                                                                              | Image                     | Software                                                        | Vendor                    | FCC                  |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------- | ------------------------- | -------------------- |
+| Yeelight LED 智慧燈泡 W3 (彩光版) <br> Yeelight LED RGB W3 Lightbulb <br> Model : YLDP005 | Wifi 802.11 b/g/n 2.4G <br> E27 (W3) Mount <br> 110V 60Hz 0.13A <br> Maximum : F4000 Color<br> 8W Power with 106lm/W <br> 15,000 Hours Life cycle | ![](images/yeelight_YLDP005.png) | [yeecli](https://gitlab.com/stavros/yeecli) ,<br> yeelight(Offical) | Yeelight <br>(acquire Xiaomi) | NCC : CCAH21LP4160T5 |
+| Yeelight LED 智慧燈泡 W3 (色溫版) <br> Yeelight LED W3 Lightbulb <br> Model : YLDP006 | Wifi 802.11 b/g/n 2.4G <br> E27 (W3) Mount <br> 110V 60Hz 0.13A <br> Maximum : F4000 Color<br> 8W Power with 106lm/W <br> 15,000 Hours Life cycle | ![](images/yeelight_YLDP006.png) | [yeecli](https://gitlab.com/stavros/yeecli) ,<br> yeelight(Offical) | Yeelight <br>(acquire Xiaomi) | NCC : CCAH21LP4160T2 
+| Wemo WiFi 智慧插座 <br> Wemo WiFi Smart Plug <br> Model : WSP080 | Wifi 802.11 b/g/n 2.4G <br> Electrical Rating : 120V~/15A/60Hz/1800W | ![](images/wemo_WSP080.png) | [wemo-cli](https://github.com/matthewhuie/wemo-cli) ,<br> wemo(Offical) | Belkin Wemo | NCC : CCAI21LP0480T0 |        
+
+- Wemo 
+add device without auto discovery (DHCP Discovery)
+
+manual with config/configuration.yaml
+```yaml
+wemo:
+  discovery: false
+  static:
+    - 192.168.the.foo
+    - 192.168.the.bar
+```
+
+- Yeelight
+ - some of bulb mount are unable hold this device, but regular bulbs are fine.
+
+### Zigbee
+#### Restriction
+- There are Zigbee coordinator(gateway), router(repeater), and device limitation amounts by the chip set.
+- Zigbee using 2.4G Hz may cause problem with your WiFi, and reducing the distance of connection.
+- Wall and floor can cause the connection going none static strongly. 
+
+#### Devices
+- Zigbee Z-Wave
+ - Gateway
+ - Dongle Gateway (CC2531) - install firmware : [zigbee2mqtt.io/flashing the cc2531](https://www.zigbee2mqtt.io/guide/adapters/flashing/flashing_the_cc2531.html) [https://github.com/Koenkk/Z-Stack-firmware](https://github.com/Koenkk/Z-Stack-firmware)
+```bash
+# upload coordinator/router firmware
+sudo ./cc-tool -e -w firmware.hex
+#postconfig
+sudo chmod +0666 /dev/ttyACM0
+#run rootless docker
+docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
+			-v /home/dreamerwolf/git/docker_home-assistant/config:/config \
+			-v /etc/localtime:/etc/localtime:ro \
+			-p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
+```
+ - Sensor
+| Name                                                        | Spec                         | Image                     | Software              | Vendor | FCC                  |
+| ----------------------------------------------------------- | ---------------------------- | ------------------------- | --------------------- | ------ | -------------------- |
+| 米家人體感應器 <br> Mi Motion Sensor <br> Model : RTCGQ01LM | Zigbee <br> Battery : CR2450 | ![](mi_motion_sensor.png) | Xiaomi Zigbee Gateway | Xiaomi | NCC : CCAK17LP1420T7 |
+  - Hack
+   - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
