@@ -264,12 +264,14 @@ docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered no
 # Home Assistant
 - Google , Alexa , Apple support with payment
 ## Request
-- If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker).
+- If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker). Or use Virtual Machine.
 ## Run
 ```bash
 docker pull ghcr.io/home-assistant/home-assistant:stable
 docker run -it --rm --name homeassistant -v ~/docker-home-assistant/config:/config -v /etc/localtime:/etc/localtime:ro -p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
 ```
+## Community Store
+- https://hacs.xyz/
 
 ## Hardware
 ### Wifi
@@ -312,7 +314,7 @@ sudo ./cc-tool -e -w firmware.hex
 sudo chmod +0666 /dev/ttyACM0
 #run rootless docker
 docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
-			-v /home/dreamerwolf/git/docker_home-assistant/config:/config \
+			-v ~/docker_home-assistant/config:/config \
 			-v /etc/localtime:/etc/localtime:ro \
 			-p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
 ```
@@ -320,6 +322,26 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
   - Hack
    - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
 
-| Name                                                        | Spec                         | Image                     | Software              | Vendor | FCC                  |
-| ----------------------------------------------------------- | ---------------------------- | ------------------------- | --------------------- | ------ | -------------------- |
+| Name                                                        | Spec                         | Image                            | Software              | Vendor | FCC                  |
+| ----------------------------------------------------------- | ---------------------------- | -------------------------------- | --------------------- | ------ | -------------------- |
 | 米家人體感應器 <br> Mi Motion Sensor <br> Model : RTCGQ01LM | Zigbee <br> Battery : CR2450 | ![](images/mi_motion_sensor.png) | Xiaomi Zigbee Gateway | Xiaomi | NCC : CCAK17LP1420T7 |
+
+#### All-in-One
+- Home Assistant Core
+```
+
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev zlib1g-dev autoconf build-essential libopenjp2-7 libtiff5 libturbojpeg0-dev tzdata
+sudo useradd -rm homeassistant
+sudo -u homeassistant -H -s
+cd /srv/homeassistant
+python3 -m venv .
+source bin/activate
+
+python3 -m pip install wheel
+
+pip3 install homeassistant
+pip3 install jinja2==3.0.3
+
+```
