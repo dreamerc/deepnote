@@ -12,7 +12,12 @@ It requires Linux and Docker skill.
  - Client Sender : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
  - Client Receiver : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
 - Network
- - IP reachable , Server needs Port <ins>80/443</ins> (HTTP) **for Client Receiver** and <ins>1935</ins> (RTMP) **for Client Sender** .
+ - IP reachable , Server needs Port <ins>TCP/1935</ins> (HTTP) .
+```
+--------                ----------
+|Server| < -TCP/1935 -> | Client |
+--------                ----------
+```
 
 ## Server (Linux Desktop/Server/Virtual Machine)
 ### nginx-rtmp
