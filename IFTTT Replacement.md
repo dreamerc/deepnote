@@ -2,12 +2,12 @@
 
 ## Softwares
 
-* [Apache Airflow](https://airflow.apache.org/)
-* [Huginn](https://github.com/huginn/huginn)
-* [Active Workflow](https://github.com/automaticmode/active_workflow)
-* [Node Red](https://nodered.org/)
-* [Home Assistant](https://www.home-assistant.io/) , with support (SmartHome)
-* [Domoticz](https://domoticz.com/) (SmartHome)
+- [Apache Airflow](https://airflow.apache.org/)
+- [Huginn](https://github.com/huginn/huginn)
+- [Active Workflow](https://github.com/automaticmode/active_workflow)
+- [Node Red](https://nodered.org/)
+- [Home Assistant](https://www.home-assistant.io/) , with support (Smart Home Devices)
+- [Domoticz](https://domoticz.com/) (Smart Home Devices)
 
 ### Huginn
 
@@ -295,7 +295,7 @@ wemo:
 ```
 
 - Yeelight
- - some of bulb mount are unable hold this device, but regular bulbs are fine.
+   - some of bulb mount are unable hold this device, but regular bulbs are fine.
 
 ### Zigbee
 #### Restriction
@@ -305,8 +305,8 @@ wemo:
 
 #### Devices
 - Zigbee Z-Wave
- - Gateway
- - Dongle Gateway (CC2531) - install firmware : [zigbee2mqtt.io/flashing the cc2531](https://www.zigbee2mqtt.io/guide/adapters/flashing/flashing_the_cc2531.html) [https://github.com/Koenkk/Z-Stack-firmware](https://github.com/Koenkk/Z-Stack-firmware)
+   - Gateway
+   - Dongle Gateway (CC2531) - install firmware : [zigbee2mqtt.io/flashing the cc2531](https://www.zigbee2mqtt.io/guide/adapters/flashing/flashing_the_cc2531.html) [https://github.com/Koenkk/Z-Stack-firmware](https://github.com/Koenkk/Z-Stack-firmware)
 ```bash
 # upload coordinator/router firmware
 sudo ./cc-tool -e -w firmware.hex
@@ -318,9 +318,9 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
 			-v /etc/localtime:/etc/localtime:ro \
 			-p 8123:8123 ghcr.io/home-assistant/home-assistant:stable
 ```
- - Sensor
-  - Hack
-   - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
+- Sensor
+   - Hack
+      - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
 
 | Name                                                        | Spec                         | Image                            | Software              | Vendor | FCC                  |
 | ----------------------------------------------------------- | ---------------------------- | -------------------------------- | --------------------- | ------ | -------------------- |
@@ -328,8 +328,7 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
 
 #### All-in-One
 - Home Assistant Core
-```
-
+```bash
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev zlib1g-dev autoconf build-essential libopenjp2-7 libtiff5 libturbojpeg0-dev tzdata
@@ -343,5 +342,4 @@ python3 -m pip install wheel
 
 pip3 install homeassistant
 pip3 install jinja2==3.0.3
-
 ```
