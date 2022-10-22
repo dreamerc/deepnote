@@ -1,9 +1,9 @@
-# 802.11 Design Datasheets/Suggestions
+# 802.11 Design Datasheets/Suggesties
 
-* Wifi 6E = 802.11ax(6G) = Wifi 6 Release 2
-* Wifi 6 = 802.11ax
-* Wifi 5 = 802.11ac
-* Wifi 4 = 802.11n
+* Wi-Fi 6E = 802.11ax(6G) = Wi-Fi 6 Release 2
+* Wi-Fi 6 = 802.11ax
+* Wi-Fi 5 = 802.11ac
+* Wi-Fi 4 = 802.11n
 
 ## Standards
 | Name     | Freq(Hz)    | Bandwidth(Hz)            | Modulator              | Spatial Steams | MaxSpeed(bit/s)                                           |
@@ -39,7 +39,7 @@ More information about MCS and Speed, please check [MCS Table (Updated with 802.
 
 ## Non-overlapping Channels
 
-### Wifi channel auto-selection
+### Wi-Fi channel auto-selection
 After 802.11n , Standard request :
 * ACS or DFS(Dynamic Frequency Selection), [hostapd](https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf)
 
@@ -132,7 +132,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/
 
 ## DFS and Weather radar
 
-DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working) 
+DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Backgroud Working) 
 
 ## Tips
 * Check Device Capabilities 
@@ -141,7 +141,7 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 # iw phy
 ```
 
-## Tools/Hardwares
+## Tools and Hardware
 
 ### Commercial 
 | Name                                   | Type           |
@@ -198,7 +198,7 @@ DFS Band -> Scan radar every 60 sec ->  Transmit Delay (Online/Backgroud Working
 | -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------ |
 | Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
 
-## OpenWRT Hardwares
+## OpenWRT Hardware
 | Vendor   | FCC | Model                                                                                                                                                  | Speed Data                                                                          | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
 | -------- | - |--------------------------------------------------------------------------------------------                                                           | ----------------------------                                                        | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Totolink | FCC : X7DIP04433 , NCC : CCAP20LP1980T9 | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2*2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |

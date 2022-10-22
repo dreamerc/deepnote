@@ -13,7 +13,7 @@ It requires Linux and Docker skill.
    - Client Sender : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
    - Client Re-steamer : OBS (or VLC installed), which support RTMP. (Windows/MAC/Linux/Android ...)
 - Network
-   - IP reachable , Server needs Port <ins>TCP/1935</ins> (HTTP) .
+   - IP reachable, Server needs Port <ins>TCP/1935</ins> (HTTP).
 
 ```
                              ------------                ----------
@@ -38,12 +38,12 @@ docker run --rm -d -p 1935:1935 --name nginx-rtmp tiangolo/nginx-rtmp
 - In the "URL" enter the `rtmp://<ip_of_host>/live` replacing `<ip_of_host>` with the IP of the host in which the container is running. For example: `rtmp://192.168.0.1/live`
 - In the "Stream key" use a "key" that will be used later in the client URL to display that specific stream. For example: `test`
 
-- Controls > Settings , Stream Tabs (Server : `rtmp://192.168.0.1/live` , Stream Key : `test` )
+- Controls > Settings, Stream Tabs (Server : `rtmp://192.168.0.1/live`, Stream Key : `test`)
 ![](images/streaming_obs_sender.png)
 
 ## Client Receiver 
 ### OBS
- - Sources > Add VLC Video Source , Playlist > Add Path/URL (example : `rtmp://192.168.0.1/live/test`)
+ - Sources > Add VLC Video Source, Playlist > Add Path/URL (example : `rtmp://192.168.0.1/live/test`)
 ![](images/streaming_obs_receiver.png)
 # Chinese
 本文件是給有多台主機桌面需要同時直播使用

@@ -1,6 +1,6 @@
 # IFTTT Replacement
 
-## Softwares
+## Software
 
 - [Apache Airflow](https://airflow.apache.org/)
 - [Huginn](https://github.com/huginn/huginn)
@@ -74,7 +74,7 @@ docker run -d --rm -v ~/huginn:/var/lib/mysql --name huginn huginn
 
 #### Troubleshooting
 
-Clear stuck job (Problem Cause : Database IO Lock) , or set **Keep events** lower as possible (1~2 days).
+Clear stuck job (Problem Cause : Database IO Lock), or set **Keep events** lower than possible (1~2 days).
 
 ```bash
 $ docker exec -it huginn /bin/bash
@@ -252,7 +252,7 @@ services:
 chown 149999:149999 -R .
 ```
 # Node Red
-- preconfig (rootless)
+- Pre-config (rootless)
 ```bash
 chown 100999:100999 docker-node_red
 ```
@@ -262,7 +262,7 @@ docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered no
 ```
 
 # Home Assistant
-- Google , Alexa , Apple support with payment
+- Google, Alexa, Apple support with payment
 ## Request
 - If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker). Or use Virtual Machine.
 ## Run
@@ -295,12 +295,12 @@ wemo:
 ```
 
 - Yeelight
-   - some of bulb mount are unable hold this device, but regular bulbs are fine.
+   - some bulb mount are unable to hold this device, but regular bulbs are fine.
 
 ### Zigbee
 #### Restriction
-- There are Zigbee coordinator(gateway), router(repeater), and device limitation amounts by the chip set.
-- Zigbee using 2.4G Hz may cause problem with your WiFi, and reducing the distance of connection.
+- There are Zigbee coordinator (gateway), router (repeater), and device limitation amounts by the chip set.
+- Zigbee using 2.4G Hz may cause problem with your Wi-Fi, and reducing the distance of connection.
 - Wall and floor can cause the connection going none static strongly. 
 
 #### Devices
