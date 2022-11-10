@@ -6,7 +6,7 @@
 - [Huginn](https://github.com/huginn/huginn)
 - [Active Workflow](https://github.com/automaticmode/active_workflow)
 - [Node Red](https://nodered.org/)
-- [Home Assistant](https://www.home-assistant.io/) , with support (Smart Home Devices)
+- [Home Assistant](https://www.home-assistant.io/), with support (Smart Home Devices)
 - [Domoticz](https://domoticz.com/) (Smart Home Devices)
 
 ### Huginn
@@ -89,6 +89,20 @@ docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "SHOW FULL PROCE
 docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "show engine innodb status;"'
 docker exec -it huginn /bin/bash -c 'mkdir -p ~/tmp/sqltest; curl https://raw.githubusercontent.com/major/MySQLTuner-perl/master/mysqltuner.pl -o ~/tmp/sqltest/tun.pl; perl ~/tmp/sqltest/tun.pl --user root --pass password'
 ```
+
+MySQL DB Transaction Tunning : 
+```bash
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "show global variables;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "set global max_heap_table_size=536870912;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "set global tmp_table_size=536870912;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "set global key_buffer_size=49152;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "set global interactive_timeout=600;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "set global wait_timeout=600;"'
+docker exec -it huginn /bin/bash -c 'mysql -uroot -ppassword -e "show global variables;"' 
+```
+
+Notice:
+1. Default MySQL need tunning in mass events ; reduce events and reduce 
 
 WebClient cause job stuck
 https://github.com/huginn/huginn/pull/1892/files
@@ -264,7 +278,7 @@ docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered no
 # Home Assistant
 - Google, Alexa, Apple support with payment
 ## Request
-- If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker). Or use Virtual Machine.
+- If using Chrome Cast, Apple Cast, and some of those device, those require IP-LAN Broadcast feature (```--network host``` option in docker). Others is using Virtual Machine.
 ## Run
 ```bash
 docker pull ghcr.io/home-assistant/home-assistant:stable
@@ -283,7 +297,7 @@ docker run -it --rm --name homeassistant -v ~/docker-home-assistant/config:/conf
 | Wemo WiFi 智慧插座 <br> Wemo WiFi Smart Plug <br> Model : WSP080 | Wifi 802.11 b/g/n 2.4G <br> Electrical Rating : 120V~/15A/60Hz/1800W | ![](images/wemo_WSP080.png) | [wemo-cli](https://github.com/matthewhuie/wemo-cli) ,<br> wemo(Offical) | Belkin Wemo | NCC : CCAI21LP0480T0 |        
 
 - Wemo 
-add device without auto discovery (DHCP Discovery)
+  - add device without auto discovery (DHCP Discovery)
 
 manual with config/configuration.yaml
 ```yaml
@@ -299,7 +313,7 @@ wemo:
 
 ### Zigbee
 #### Restriction
-- There are Zigbee coordinator (gateway), router (repeater), and device limitation amounts by the chip set.
+- There are Zigbee coordinator (gateway), router (repeater), and device limitation amounts by the chipset.
 - Zigbee using 2.4G Hz may cause problem with your Wi-Fi, and reducing the distance of connection.
 - Wall and floor can cause the connection going none static strongly. 
 
@@ -320,7 +334,7 @@ docker run -it --rm --name homeassistant -v /dev/ttyACM0:/dev/ttyACM0 \
 ```
 - Sensor
    - Hack
-      - [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
+      - Action Sensor Delay-jumpper [破解小米米家人體感應器反應時間限制](https://droidcookie.blogspot.com/2020/01/zigbeehassiozigbee2mqtt.html) [Video](https://www.youtube.com/watch?v=TAstPtsmjl0)
 
 | Name                                                        | Spec                         | Image                            | Software              | Vendor | FCC                  |
 | ----------------------------------------------------------- | ---------------------------- | -------------------------------- | --------------------- | ------ | -------------------- |
