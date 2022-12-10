@@ -6,6 +6,7 @@
 * Wi-Fi 4 = 802.11n
 
 ## Standards
+
 | Name     | Freq(Hz)    | Bandwidth(Hz)            | Modulator              | Spatial Steams | MaxSpeed(bit/s)                                           |
 | -------- | ----------- | --------------------     | ---------------------- | -------------- | --------------------------------------------------------- |
 | 802.11a  | 5 G         | 5/10/20 M                | OFDM                   |                | 13.5/27/54 M                                              |
@@ -20,22 +21,44 @@
 |          | 5 G         | 20/40 M                  | MIMO-OFDM (MCS 9)      |                | 288.8/600 M                                               |
 
 More information about MCS and Speed, please check [MCS Table (Updated with 802.11ax Data Rates)](https://semfionetworks.com/blog/mcs-table-updated-with-80211ax-data-rates/) and [Aruba 802.11AX White Paper](https://www.arubanetworks.com/assets/wp/WP_802.11AX.pdf)
+
+## 2.4G Freq 
+```
+Channel Number	Frequency Range (MHz)	Center Frequency (MHz)	Availability
+1	2401 - 2423	2412	Global
+2	2406 - 2428	2417	Global
+3	2411 - 2433	2422	Global
+4	2416 - 2438	2427	Global
+5	2421 - 2443	2432	Global
+6	2426 - 2448	2437	Global
+7	2431 - 2453	2442	Global
+8	2436 - 2458	2447	Global
+9	2441 - 2463	2452	Global
+10	2446 - 2468	2457	Global
+11	2451 - 2473	2462	Global
+12	2456 - 2478	2467	Africa, Asia & Europe
+13	2461 - 2483	2472	Africa, Asia & Europe
+14	2473 - 2484	2482	Japan
+```
+
+1. [2.4 GHz Wi-Fi (802.11b/g/n) Channels and Frequency Band](https://www.everythingrf.com/community/2-4-ghz-wi-fi-802-11b-g-n-channels-and-frequency-band)
+
 ## MCS
 
-| MCS Index | Modulation | Coding | RSSI Worst Min |
-| --        | --         | --     | --             |
-| 0         | BPSK       | 1/2    | -73            |
-| 1         | QPSK       | 1/2    | -70            |
-| 2         | QPSK       | 3/4    | -68            |
-| 3         | 16-QAM     | 2/3    | -65            |
-| 4         | 16-QAM     | 3/4    | -61            |
-| 5         | 64-QAM     | 2/3    | -57            |
-| 6         | 64-QAM     | 3/4    | -56            |
-| 7         | 64-QAM     | 5/6    | -55            |
-| 8         | 256-QAM    | 3/4    | -50            |
-| 9         | 256-QAM    | 5/6    | -48            |
-| 10        | 1024-QAM   | 3/4    | -43 (Predict)  |
-| 11        | 1024-QAM   | 5/6    | -41 (Predict)  |
+| MCS Index     | Modulation | Coding | RSSI Worst Min |
+| ------------- | ---------- | ------ | -------------- |
+| 0             | BPSK       | 1/2    | -73            |
+| 1             | QPSK       | 1/2    | -70            |
+| 2             | QPSK       | 3/4    | -68            |
+| 3             | 16-QAM     | 2/3    | -65            |
+| 4             | 16-QAM     | 3/4    | -61            |
+| 5             | 64-QAM     | 2/3    | -57            |
+| 6             | 64-QAM     | 3/4    | -56            |
+| 7             | 64-QAM     | 5/6    | -55            |
+| 8             | 256-QAM    | 3/4    | -50            |
+| 9             | 256-QAM    | 5/6    | -48            |
+| 10 (11ax ...) | 1024-QAM   | 3/4    | -43 (Predict)  |
+| 11 (11ax ...) | 1024-QAM   | 5/6    | -41 (Predict)  |
 
 ## Non-overlapping Channels
 
@@ -110,32 +133,41 @@ S4 is {0,2}
 
 ## CRDA Code
 
-Get Device Code
+Region Restriction
+
+- Get Device Code
 
 ```bash
 # iw reg get
 global
-country TW: DFS-FCC
-        (2400 - 2483 @ 40), (N/A, 30), (N/A)
-        (5150 - 5250 @ 80), (N/A, 23), (N/A), AUTO-BW
-        (5250 - 5350 @ 80), (N/A, 23), (0 ms), DFS, AUTO-BW
-        (5470 - 5730 @ 160), (N/A, 23), (0 ms), DFS
-        (5725 - 5850 @ 80), (N/A, 30), (N/A)
-        (57000 - 66000 @ 2160), (N/A, 40), (N/A)
+country 00: DFS-UNSET
+	(755 - 928 @ 2), (N/A, 20), (N/A), PASSIVE-SCAN
+	(2402 - 2472 @ 40), (N/A, 20), (N/A)
+	(2457 - 2482 @ 20), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, PASSIVE-SCAN
+	(5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, AUTO-BW, PASSIVE-SCAN
+	(5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, PASSIVE-SCAN
+	(5735 - 5835 @ 80), (N/A, 20), (N/A), PASSIVE-SCAN
+	(57240 - 63720 @ 2160), (N/A, 0), (N/A)
 ```
 
 Linux Kernel CRDA Source :
 
 ```http
-https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/
+https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 ```
+
+- 6 GHz Band required the base station support.
 
 ## DFS and Weather radar
 
-DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Backgroud Working) 
+DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Working) 
 
 ## Tips
+
 * Check Device Capabilities 
+
 ```bash
 # iw dev <name> link
 # iw phy
@@ -144,6 +176,9 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Backgroud Workin
 ## Tools and Hardware
 
 ### Commercial 
+
+#### Software
+
 | Name                                   | Type           |
 | -------------------------------------- | -------------- |
 | TamoGraph Site Survey                  | Design         |
@@ -165,43 +200,69 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Backgroud Workin
 |                                        |                |
 | Wireshark                              | Debug          |
 |                                        |                |
-| Ubiquiti Unifi Controller              | AllInOne       |
-| Fortinet FortiWifi                     | AllInOne       |
-| MikroTik Wifi                          | AllInOne       |
-| Ruckus Networks                        | AllInOne       |
-| Aruba                                  | AllInOne       |
-| WatchGuard                             | AllInOne       |
-| Cisco                                  | AllInOne       |
-| Linksys                                | AllInOne       |
-| NetGear                                | AllInOne       |
-|                                        |                |
-| Tektronix                              | Tester         |
-| Rohde & Schwarz                        | Tester         |
-| Anritsu                                | Tester         |
-| Keysight                               | Tester         |
-| NetAlly                                | Tester         |
-| CSL                                    | Tester         |
-| Flurk                                  | Tester         |
-|                                        |                |
-| ASUS(Taiwan)                           | Device Vendor  |
-| D-Link(Taiwan)                         | Device Vendor  |
-| TP-Link(China)                         | Device Vendor  |
-| Zyxel(Taiwan)                          | Device Vendor  |
-| DrayTek(Taiwan)                        | Device Vendor  |
-| Tenda/騰達(China)                      | Device Vendor  |
-| Totolink(Korea)                        | Device Vendor  |
-| EDIMAX                                 | Device Vendor  |
+
+#### Total solution / Enterprise 
+
+| Name                      | Type     |
+| ------------------------- | -------- |
+| Ubiquiti Unifi Controller | AllInOne |
+| Fortinet FortiWifi        | AllInOne |
+| MikroTik Wifi             | AllInOne |
+| Ruckus Networks           | AllInOne |
+| Aruba                     | AllInOne |
+| WatchGuard                | AllInOne |
+| Cisco                     | AllInOne |
+| Linksys                   | AllInOne |
+| NetGear                   | AllInOne |
+
+#### Tester
+
+| Name                      | Type     |
+| ------------------------- | -------- |
+| Tektronix                 | Tester   |
+| Rohde & Schwarz           | Tester   |
+| Anritsu                   | Tester   |
+| Keysight                  | Tester   |
+| NetAlly                   | Tester   |
+| CSL                       | Tester   |
+| Flurk                     | Tester   |
+
+#### Home/SOHO Wifi Router
+
+| Name               | Type          |
+| ------------------ | ------------- |
+| ASUS (Taiwan)      | Device Vendor |
+| D-Link (Taiwan)    | Device Vendor |
+| TP-Link (China)    | Device Vendor |
+| Zyxel (Taiwan)     | Device Vendor |
+| DrayTek (Taiwan)   | Device Vendor |
+| Tenda/騰達 (China) | Device Vendor |
+| Totolink (Korea)   | Device Vendor |
+| EDIMAX             | Device Vendor |
+| Mercusys           | Device Vendor |
+| NetGear            | Device Vendor |
+| HUAWEI (China)     | Device Vendor |
+| QNap (Taiwan)      | Device Vendor |
+| TAMIO              | Device Vendor |
 
 
 ### Draft
+
 | Name                       | Type     | Free | Link                                                                                        |
-| -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------ |
+| -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------- |
 | Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
 
 ## OpenWRT Hardware
-| Vendor   | FCC | Model                                                                                                                                                  | Speed Data                                                                          | Version  | Shop                                                      | Openwrt Firmware                                                                                                                                | OEM Firmware                                                                                            |
-| -------- | - |--------------------------------------------------------------------------------------------                                                           | ----------------------------                                                        | -------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Totolink | FCC : X7DIP04433 , NCC : CCAP20LP1980T9 | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2*2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin)  | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
+
+| Vendor   | FCC                                     | Model                                                                                        | Speed Data                                                                            | Version  | Shop                                                      | Openwrt Firmware                                                                                                                               | OEM Firmware                                                                                            |
+| -------- | --------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Totolink | FCC : X7DIP04433 , NCC : CCAP20LP1980T9 | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2 * 2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin) | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
+
+## Cards
+
+| Vendor | FCC | Model | Speed Data |
+| ------ | --- | ----- | ----- |
+| Intel  | FCC : PD9AX210NG | AX210 | 2 * 2  , 11n HT40 , 11ac VHT160 , 11ax HE160 |
 
 ## Certifications
 RF Model Standard and Reports
