@@ -2,12 +2,18 @@
 
 ## Software
 
-- [Apache Airflow](https://airflow.apache.org/)
-- [Huginn](https://github.com/huginn/huginn)
-- [Active Workflow](https://github.com/automaticmode/active_workflow)
-- [Node Red](https://nodered.org/)
-- [Home Assistant](https://www.home-assistant.io/), with support (Smart Home Devices)
-- [Domoticz](https://domoticz.com/) (Smart Home Devices)
+- Java
+  - [Apache Airflow](https://airflow.apache.org/)
+- Rail & Ruby
+  - [Huginn](https://github.com/huginn/huginn)
+  - [Active Workflow](https://github.com/automaticmode/active_workflow)
+- JS/TS
+  - [Node Red](https://nodered.org/)
+  - [n8n](https://n8n.io/)
+- Python
+  - [Home Assistant](https://www.home-assistant.io/), with support (Smart Home Devices)
+- Others 
+  - [Domoticz](https://domoticz.com/) (Smart Home Devices)
 
 ### Huginn
 
@@ -273,6 +279,28 @@ chown 100999:100999 docker-node_red
 - docker run
 ```bash
 docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered nodered/node-red
+```
+
+# N8N
+- docker run
+```bash
+docker run -it --rm --name n8n \
+        -v ~/n8n/.n8n:/home/node/.n8n \
+        -e N8N_BASIC_AUTH_ACTIVE=true \
+        -e N8N_BASIC_AUTH_USER=n8n_example \
+        -e N8N_BASIC_AUTH_PASSWORD=n8n_example \
+        -e N8N_HOST=n8n.example.com \
+        -e N8N_PORT=5678 \
+        -e N8N_PROTOCOL=https \
+        -e NODE_ENV=production \
+        -e WEBHOOK_URL=https://n8n.example.com/ \
+        -e GENERIC_TIMEZONE=UTC \
+        -e N8N_REINSTALL_MISSING_PACKAGES=true \
+        -e N8N_HIRING_BANNER_ENABLED=false \
+        -e N8N_LOG_LEVEL=verbose \
+        -e NODE_FUNCTION_ALLOW_BUILTIN=* \
+        -e NODE_FUNCTION_ALLOW_EXTERNAL=* \
+        n8nio/n8n
 ```
 
 # Home Assistant
