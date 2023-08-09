@@ -282,6 +282,9 @@ docker run -it --rm -p 1880:1880 -v ~/docker-node_red:/data:rw --name nodered no
 ```
 
 # N8N
+- Hidden Problems
+  - After 1.0, disabled basic authentication feature. Force to open account in `n8n.cloud`.
+  - sentry.io feature will cause GDPR/Privacy problem about IP address. You need add `N8N_DIAGNOSTICS_ENABLED=false` to disable the upload.
 - docker run
 ```bash
 docker run -it --rm --name n8n \
@@ -297,9 +300,12 @@ docker run -it --rm --name n8n \
         -e GENERIC_TIMEZONE=UTC \
         -e N8N_REINSTALL_MISSING_PACKAGES=true \
         -e N8N_HIRING_BANNER_ENABLED=false \
+        -e N8N_VERSION_NOTIFICATIONS_ENABLED \
+        -e N8N_DIAGNOSTICS_ENABLED=false \
         -e N8N_LOG_LEVEL=verbose \
         -e NODE_FUNCTION_ALLOW_BUILTIN=* \
         -e NODE_FUNCTION_ALLOW_EXTERNAL=* \
+        -e DB_SQLITE_VACUUM_ON_STARTUP=true \
         n8nio/n8n
 ```
 
