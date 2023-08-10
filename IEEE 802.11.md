@@ -1,5 +1,5 @@
 # 802.11 Design Datasheets/Suggesties
-
+* Li-Fi (IEEE P802.11bb Draft 6~)
 * Wi-Fi 6E = 802.11ax(6G) = Wi-Fi 6 Release 2
 * Wi-Fi 6 = 802.11ax
 * Wi-Fi 5 = 802.11ac
@@ -7,24 +7,25 @@
 
 ## Standards
 
-| Name     | Freq(Hz)    | Bandwidth(Hz)            | Modulator              | Spatial Steams | MaxSpeed(bit/s)                                           |
-| -------- | ----------- | --------------------     | ---------------------- | -------------- | --------------------------------------------------------- |
-| 802.11a  | 5 G         | 5/10/20 M                | OFDM                   |                | 13.5/27/54 M                                              |
-| 802.11ac | 2.4 G       | 20/40/80/80+80/160 M     | MCS 7/MCS 9(/1024-QAM) | 1~4            | 150/300/400/450/600/(750/)800(/1000) M                    |
-|          | 5 G         | 20/40/80/80+80/160 M     | MCS 7/MCS 9/1024-QAM   | 1~4            | 433/650/867/975/1300/1625/1733/2167/1300+1300/2167+2167 M |
-| 802.11ad | 60 G        | 2/160 M                  | OFDM                   |                | 0.85/6.7 G                                                |
-| 802.11ax | 2.4/5(/6) G | 20/40/80/80+80/160 M     | MIMO-OFDM/OFDMA        | 1~8            | 1147/2294/4804/4804+4804/9608 M                           |
-| 802.11b  | 2.4 G       | 22 M                     | DSSS                   |                | 11 M                                                      |
-| 802.11be | 2.4/5/6 G   | 160+80/240/160+160/320 M | ODFMA 4096-QAM         | 1-16           |                                                           |
-| 802.11g  | 2.4 G       | 20 M                     | OFDM                   |                | 54 M                                                      |
-| 802.11n  | 2.4 G       | 20/40 M                  | MIMO-OFDM (MCS 7)      |                | 72.2/150 M                                                |
-|          | 5 G         | 20/40 M                  | MIMO-OFDM (MCS 9)      |                | 288.8/600 M                                               |
+| Name     | Frequency(Hz) | Bandwidth(Hz)            | Shift(MHz)  | Modulation             | Spatial Steams | Max Speed(bit/s)                                          |
+| -------- | ------------- | ------------------------ | ----------- | ---------------------- | -------------- | --------------------------------------------------------- |
+| 802.11a  | 5 G           | 5/10/20 M                | 20          | OFDM                   |                | 13.5/27/54 M                                              |
+| 802.11ac | 2.4 G         | 20/40/80/80+80/160 M     | 5           | MCS 7/MCS 9(/1024-QAM) | 1~4            | 150/300/400/450/600/(750/)800(/1000) M                    |
+|          | 5 G           | 20/40/80/80+80/160 M     | 20          | MCS 7/MCS 9/1024-QAM   | 1~4            | 433/650/867/975/1300/1625/1733/2167/1300+1300/2167+2167 M |
+| 802.11ad | 60 G          | 2/160 M                  | 1.08,2.16 G | OFDM                   |                | 0.85/6.7 G                                                |
+| 802.11ax | 2.4,5(,6) G   | 20/40/80/80+80/160 M     | 5,20        | MIMO-OFDM/OFDMA        | 1~8            | 1147/2294/4804/4804+4804/9608 M                           |
+| 802.11b  | 2.4 G         | 22 M                     | 5           | DSSS                   |                | 11 M                                                      |
+| 802.11bb | 800nm~1000nm  | 20 M ~ 320 M             | 26          | ODFM  1024-QAM         |                | 10 M to 9.6 G                                             |
+| 802.11be | 2.4,5,6 G     | 160+80/240/160+160/320 M | 5,20        | ODFMA 4096-QAM         | 1~16           |                                                           |
+| 802.11g  | 2.4 G         | 20 M                     | 5           | OFDM                   |                | 54 M                                                      |
+| 802.11n  | 2.4 G         | 20/40 M                  | 5           | MIMO-OFDM (MCS 7)      |                | 72.2/150 M                                                |
+|          | 5 G           | 20/40 M                  | 20          | MIMO-OFDM (MCS 9)      |                | 288.8/600 M                                               |
 
 More information about MCS and Speed, please check [MCS Table (Updated with 802.11ax Data Rates)](https://semfionetworks.com/blog/mcs-table-updated-with-80211ax-data-rates/) and [Aruba 802.11AX White Paper](https://www.arubanetworks.com/assets/wp/WP_802.11AX.pdf)
 
-## 2.4G Freq 
+## 2.4G Frequency 
 ```
-Channel Number	Frequency Range (MHz)	Center Frequency (MHz)	Availability
+Channel Number	Frequency Range (MHz)	Centre Frequency (MHz)	Availability
 1	2401 - 2423	2412	Global
 2	2406 - 2428	2417	Global
 3	2411 - 2433	2422	Global
@@ -129,7 +130,8 @@ S4 is {0,1}
 S4 is {0,2}
 @enduml
 ```
-
+- 5G (The image is from Internet unknown resource.)
+![](IEEE_80211_5G_Channel.png)
 
 ## CRDA Code
 
@@ -242,7 +244,7 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Worki
 | Mercusys           | Device Vendor |
 | NetGear            | Device Vendor |
 | HUAWEI (China)     | Device Vendor |
-| QNap (Taiwan)      | Device Vendor |
+| QNAP (Taiwan)      | Device Vendor |
 | TAMIO              | Device Vendor |
 
 
@@ -266,12 +268,12 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Worki
 
 ## Certifications
 RF Model Standard and Reports
-* [FCC ID Search](https://www.fcc.gov/oet/ea/fccid)
-* [NCC 型式認證資料查詢](https://nccmember.ncc.gov.tw/Application/Fun/Fun016.aspx)
-* [技術基準適合証明等を受けた機器の検索](https://www.tele.soumu.go.jp/giteki/SearchServlet?pageID=js01)
-* [Search KC Certification Status](https://ccac.rra.go.kr/en/view/sub201020.jsp)
-* [ERAC National Certification Database](https://equipment.erac.gov.au/Public/)
-* [IMDA Equipment Search](https://eservice.imda.gov.sg/tls/searchEquipment.action)
+* US : [FCC ID Search](https://www.fcc.gov/oet/ea/fccid)
+* TW : [NCC 型式認證資料查詢](https://nccmember.ncc.gov.tw/Application/Fun/Fun016.aspx)
+* JP : [技術基準適合証明等を受けた機器の検索](https://www.tele.soumu.go.jp/giteki/SearchServlet?pageID=js01)
+* KR : [Search KC Certification Status](https://ccac.rra.go.kr/en/view/sub201020.jsp)
+* AU : [ERAC National Certification Database](https://equipment.erac.gov.au/Public/)
+* SG : [IMDA Equipment Search](https://eservice.imda.gov.sg/tls/searchEquipment.action)
 
 # Ref
 
