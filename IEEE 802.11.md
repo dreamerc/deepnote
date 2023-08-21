@@ -1,29 +1,44 @@
 # 802.11 Design Datasheets/Suggesties
-* Li-Fi (IEEE P802.11bb Draft 6~)
-* Wi-Fi 6E = 802.11ax(6G) = Wi-Fi 6 Release 2
-* Wi-Fi 6 = 802.11ax
-* Wi-Fi 5 = 802.11ac
-* Wi-Fi 4 = 802.11n
+- Draft
+  - Li-Fi (IEEE P802.11bb Draft 6~)
+  - Wi-Fi 7 = 802.11be
+- Running
+  - Wi-Fi 6E = 802.11ax(6G) = Wi-Fi 6 Release 2
+  - Wi-Fi 6 = 802.11ax
+  - Wi-Fi 5 = 802.11ac
+  - Wi-Fi 4 = 802.11n
 
 ## Standards
 
-| Name     | Frequency(Hz) | Bandwidth(Hz)            | Shift(MHz)  | Modulation             | Spatial Steams | Max Speed(bit/s)                                          |
-| -------- | ------------- | ------------------------ | ----------- | ---------------------- | -------------- | --------------------------------------------------------- |
-| 802.11a  | 5 G           | 5/10/20 M                | 20          | OFDM                   |                | 13.5/27/54 M                                              |
-| 802.11ac | 2.4 G         | 20/40/80/80+80/160 M     | 5           | MCS 7/MCS 9(/1024-QAM) | 1~4            | 150/300/400/450/600/(750/)800(/1000) M                    |
-|          | 5 G           | 20/40/80/80+80/160 M     | 20          | MCS 7/MCS 9/1024-QAM   | 1~4            | 433/650/867/975/1300/1625/1733/2167/1300+1300/2167+2167 M |
-| 802.11ad | 60 G          | 2/160 M                  | 1.08,2.16 G | OFDM                   |                | 0.85/6.7 G                                                |
-| 802.11ax | 2.4,5(,6) G   | 20/40/80/80+80/160 M     | 5,20        | MIMO-OFDM/OFDMA        | 1~8            | 1147/2294/4804/4804+4804/9608 M                           |
-| 802.11b  | 2.4 G         | 22 M                     | 5           | DSSS                   |                | 11 M                                                      |
-| 802.11bb | 800nm~1000nm  | 20 M ~ 320 M             | 26          | ODFM  1024-QAM         |                | 10 M to 9.6 G                                             |
-| 802.11be | 2.4,5,6 G     | 160+80/240/160+160/320 M | 5,20        | ODFMA 4096-QAM         | 1~16           |                                                           |
-| 802.11g  | 2.4 G         | 20 M                     | 5           | OFDM                   |                | 54 M                                                      |
-| 802.11n  | 2.4 G         | 20/40 M                  | 5           | MIMO-OFDM (MCS 7)      |                | 72.2/150 M                                                |
-|          | 5 G           | 20/40 M                  | 20          | MIMO-OFDM (MCS 9)      |                | 288.8/600 M                                               |
+- Flows = Spatial streams
+
+| Name     | Frequency (GHz) | Bandwidth (MHz)                 | Shift (MHz) | Modulation (PHY)                 | Flows | Max Speed (bit/s)                                         |
+| -------- | --------------- | ------------------------------- | ----------- | -------------------------------- | ----- | --------------------------------------------------------- |
+| 802.11a  | 5               | 5/10/20                         | 20          | OFDM                             | -     | 13.5/27/54 M                                              |
+| 802.11ac | 2.4             | 20/40/80/80+80/160              | 5           | MCS 7(/1024-QAM), VHT            | 8     | 150/300/400/450/600/(750/)800(/1000) M                    |
+|          | 5               | 20/40/80/80+80/160              | 20          | MCS 9/1024-QAM, VHT & Part HE    | 8     | 433/650/867/975/1300/1625/1733/2167/1300+1300/2167+2167 M |
+| 802.11ad | 60              | 2/160                           | 1.08,2.16 G | OFDM, DGM                        | -     | 0.85/6.7(/8.085) G                                        |
+| 802.11ax | 2.4,5(,6)       | 20/40/80/80+80/160              | 5,20        | MIMO-OFDM/OFDMA, HE              | 8     | 1147/2294/4804/4804+4804/9608 M                           |
+| 802.11b  | 2.4             | 22                              | 5           | HR/DSSS                          | -     | 11 M                                                      |
+| 802.11bb | 800nm~1000nm    | 20 ~ 320                        | 26          | ODFM, 1024-QAM, LC(HT)           | -     | 10 M to 9.6 G                                             |
+| 802.11be | 2.4,5,6         | 20/40/80/160/160+80/160+160/320 | 5,20        | ODFMA 4096-QAM, EHT              | 16    |                                                           |
+| 802.11g  | 2.4             | 20                              | 5           | OFDM, ERP                        | -     | 54 M                                                      |
+| 802.11n  | 2.4             | 20/40                           | 5           | MIMO-OFDM (MCS 7), HT            | 4     | 72.2/150 M                                                |
+|          | 5               | 20/40                           | 20          | MIMO-OFDM (MCS 9), HT & Part VHT | 4     | 288.8/600 M                                               |
 
 More information about MCS and Speed, please check [MCS Table (Updated with 802.11ax Data Rates)](https://semfionetworks.com/blog/mcs-table-updated-with-80211ax-data-rates/) and [Aruba 802.11AX White Paper](https://www.arubanetworks.com/assets/wp/WP_802.11AX.pdf)
+## Frequency
 
-## 2.4G Frequency 
+- Network Control
+  - 802.11k (Radio Resource Measurement)
+  - 802.11v (Wireless Network Management)
+  - 802.11r (Fast BSS Transition/FT)
+- Protect 
+  - 802.11w (Protected management frame + Security association)
+- Mesh
+  - 802.11s
+### 2.4G 
+
 ```
 Channel Number	Frequency Range (MHz)	Centre Frequency (MHz)	Availability
 1	2401 - 2423	2412	Global
@@ -43,29 +58,136 @@ Channel Number	Frequency Range (MHz)	Centre Frequency (MHz)	Availability
 ```
 
 1. [2.4 GHz Wi-Fi (802.11b/g/n) Channels and Frequency Band](https://www.everythingrf.com/community/2-4-ghz-wi-fi-802-11b-g-n-channels-and-frequency-band)
+### 5G
 
-## MCS
+- DFS(Dynamic Frequency Selection)
+  - DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Working) 
+- TPC (Transmit Power Control)
+- Both are for Weather radar.
+- Related 802.11h-2003 and 802.11a
 
-| MCS Index     | Modulation | Coding | RSSI Worst Min |
-| ------------- | ---------- | ------ | -------------- |
-| 0             | BPSK       | 1/2    | -73            |
-| 1             | QPSK       | 1/2    | -70            |
-| 2             | QPSK       | 3/4    | -68            |
-| 3             | 16-QAM     | 2/3    | -65            |
-| 4             | 16-QAM     | 3/4    | -61            |
-| 5             | 64-QAM     | 2/3    | -57            |
-| 6             | 64-QAM     | 3/4    | -56            |
-| 7             | 64-QAM     | 5/6    | -55            |
-| 8             | 256-QAM    | 3/4    | -50            |
-| 9             | 256-QAM    | 5/6    | -48            |
-| 10 (11ax ...) | 1024-QAM   | 3/4    | -43 (Predict)  |
-| 11 (11ax ...) | 1024-QAM   | 5/6    | -41 (Predict)  |
+### 6G
+
+- Based station/Access point
+  - AFC (Automated Frequency Control)
+
+1. [無線新技術2：Wi-Fi 6E](https://zhuanlan.zhihu.com/p/410819519)
+## Modulation and PHY (Physical Layer)
+
+- ODFM(802.11a)
+  - HR/DSSS(802.11b)
+  - ERP(802.11g)
+  - HT(802.11n) and VHT(802.11ac)
+  - DMG(802.11ad)
+- ODFMA
+  - HE(802.11ax)
+  - EHT(802.11be)
+
+1. [Wikipedia: Wi-Fi 6](https://en.wikipedia.org/wiki/Wi-Fi_6)
+2. [Wikipedia: IEEE 802.11be](https://en.wikipedia.org/wiki/IEEE_802.11be)
+### HT MCS
+
+| MCS Index | Modulation | Coding | RSSI Worst Min |
+| --------- | ---------- | ------ | -------------- |
+| 0         | BPSK       | 1/2    | -73            |
+| 1         | QPSK       | 1/2    | -70            |
+| 2         | QPSK       | 3/4    | -68            |
+| 3         | 16-QAM     | 2/3    | -65            |
+| 4         | 16-QAM     | 3/4    | -61            |
+| 5         | 64-QAM     | 2/3    | -57            |
+| 6         | 64-QAM     | 3/4    | -56            |
+| 7         | 64-QAM     | 5/6    | -55            |
+| 8...      | BPSK...    | 1/2    | -73            |
+
+### VHT MCS
+
+| MCS Index | Modulation | Flow | Coding | RSSI Worst Min |
+| --------- | ---------- | ---- | ------ | -------------- |
+| 0         | BPSK       | 1    | 1/2    | -73            |
+| 1         | QPSK       | 1    | 1/2    | -70            |
+| 2         | QPSK       | 1    | 3/4    | -68            |
+| 3         | 16-QAM     | 1    | 2/3    | -65            |
+| 4         | 16-QAM     | 1    | 3/4    | -61            |
+| 5         | 64-QAM     | 1    | 2/3    | -57            |
+| 6         | 64-QAM     | 1    | 3/4    | -56            |
+| 7         | 64-QAM     | 1    | 5/6    | -55            |
+| 8         | 256-QAM    | 1    | 3/4    | -50            |
+| 9         | 256-QAM    | 1    | 5/6    | -48            |
+| 0...      | BPSK...    | 2... | 1/2    | -73            |
+
+### HE MCS
+- DCM (Dual sub-Carrier Modulation)
+  - DCM supports up to 2 flow, others are vendors' feature.
+- Tones (26, 52, 106, 242, 484, 996, 2x996)
+
+| MCS Index | DCM  | Modulation | Flow | Coding | RSSI Worst Min |
+| --------- | ---- | ---------- | ---- | ------ | -------------- |
+| 0         | 0    | BPSK       | 1    | 1/2    | -73            |
+| 0         | 1    | BPSK       | 1    | 1/2    | -73            |
+| 1         | 0    | QPSK       | 1    | 1/2    | -70            |
+| 1         | 1    | QPSK       | 1    | 1/2    | -70            |
+| 2         | 0    | QPSK       | 1    | 3/4    | -68            |
+| 2         | 1    | QPSK       | 1    | 3/4    | -68            |
+| 3         | 0    | 16-QAM     | 1    | 2/3    | -65            |
+| 3         | 1    | 16-QAM     | 1    | 2/3    | -65            |
+| 4         | 0    | 16-QAM     | 1    | 3/4    | -61            |
+| 4         | 1    | 16-QAM     | 1    | 3/4    | -61            |
+| 5         | -    | 64-QAM     | 1    | 2/3    | -57            |
+| 6         | -    | 64-QAM     | 1    | 3/4    | -56            |
+| 7         | -    | 64-QAM     | 1    | 5/6    | -55            |
+| 8         | -    | 256-QAM    | 1    | 3/4    | -50            |
+| 9         | -    | 256-QAM    | 1    | 5/6    | -48            |
+| 10        | -    | 1024-QAM   | 1    | 3/4    | -43 (Predict)  |
+| 11        | -    | 1024-QAM   | 1    | 5/6    | -41 (Predict)  |
+| 0...      | 0... | BPSK...    | 2... | 1/2    | -73            |
+
+### EHT MCS
+
+ - Tones Limits
+   - Small-size :
+     - 26+106 at 20/40 MHz
+	 - 26+52 at 20/40/80 MHz
+   - Large-size : 
+     - 242+484 at 80 MHz
+     - 484+996, 242+484+996 at 160 MHz
+     - 2x996, 484+2x996 at 240 MHz
+     - 3x996, 484+3x996 at 320 MHz
+
+
+1. [IEEE 802.11be – Wi-Fi 7: New Challenges and
+Opportunities](https://arxiv.org/pdf/2007.13401.pdf)
+
+| MCS Index | DCM  | Modulation | Flow | Coding | RSSI Worst Min |
+| --------- | ---- | ---------- | ---- | ------ | -------------- |
+| 0         | 0    | BPSK       | 1    | 1/2    | -73            |
+| 0         | 1    | BPSK       | 1    | 1/2    | -73            |
+| 1         | 0    | QPSK       | 1    | 1/2    | -70            |
+| 1         | 1    | QPSK       | 1    | 1/2    | -70            |
+| 2         | 0    | QPSK       | 1    | 3/4    | -68            |
+| 2         | 1    | QPSK       | 1    | 3/4    | -68            |
+| 3         | 0    | 16-QAM     | 1    | 2/3    | -65            |
+| 3         | 1    | 16-QAM     | 1    | 2/3    | -65            |
+| 4         | 0    | 16-QAM     | 1    | 3/4    | -61            |
+| 4         | 1    | 16-QAM     | 1    | 3/4    | -61            |
+| 5         | -    | 64-QAM     | 1    | 2/3    | -57            |
+| 6         | -    | 64-QAM     | 1    | 3/4    | -56            |
+| 7         | -    | 64-QAM     | 1    | 5/6    | -55            |
+| 8         | -    | 256-QAM    | 1    | 3/4    | -50            |
+| 9         | -    | 256-QAM    | 1    | 5/6    | -48            |
+| 10        | -    | 1024-QAM   | 1    | 3/4    | -43 (Predict)  |
+| 11        | -    | 1024-QAM   | 1    | 5/6    | -41 (Predict)  |
+| 12        | -    | 4096-QAM   | 1    | 3/4    | -35 (Predict)  |
+| 13        | -    | 4096-QAM   | 1    | 5/6    | -33 (Predict)  |
+| 14        | -    | BPSK       | 1    | 1/2    | -73            |
+| 15        | -    | BPSK       | 1    | 1/2    | -70            |
+| 0...      | 0... | BPSK...    | 2... | 1/2    | -73            |
 
 ## Non-overlapping Channels
 
 ### Wi-Fi channel auto-selection
-After 802.11n , Standard request :
-* ACS or DFS(Dynamic Frequency Selection), [hostapd](https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf)
+
+After 802.11n, Standard request :
+* ACS (Auto Channel Selection) and DFS(Dynamic Frequency Selection), [hostapd](https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf)
 
 ### 802.11b/g/n
 
@@ -162,10 +284,6 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 
 - 6 GHz Band required the base station support.
 
-## DFS and Weather radar
-
-DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Working) 
-
 ## Tips
 
 * Check Device Capabilities 
@@ -177,6 +295,9 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Worki
 
 ## Tools and Hardware
 
+### OpenWRT
+- Config : [Wi-Fi /etc/config/wireless](https://openwrt.org/docs/guide-user/network/wifi/basic)
+- Enable WPA3+802.11kvr : https://vicfree.com/2022/11/openwrt-wpa3-802.11kvr-ap-setup/
 ### Commercial 
 
 #### Software
@@ -219,15 +340,15 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Worki
 
 #### Tester
 
-| Name                      | Type     |
-| ------------------------- | -------- |
-| Tektronix                 | Tester   |
-| Rohde & Schwarz           | Tester   |
-| Anritsu                   | Tester   |
-| Keysight                  | Tester   |
-| NetAlly                   | Tester   |
-| CSL                       | Tester   |
-| Flurk                     | Tester   |
+| Name            | Type   |
+| --------------- | ------ |
+| Tektronix       | Tester |
+| Rohde & Schwarz | Tester |
+| Anritsu         | Tester |
+| Keysight        | Tester |
+| NetAlly         | Tester |
+| CSL             | Tester |
+| Flurk           | Tester |
 
 #### Home/SOHO Wifi Router
 
@@ -256,14 +377,18 @@ DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Worki
 
 ## OpenWRT Hardware
 
+- HT40 = HT (modulation standard) + 40 MHz bandwidth.
+- Some of the products are not fully having those features.
+  - Like 802.11ax = HE160 , 802.11ac wave 2 = VHT160 , 802.11ac wave 1 = VHT80 
+
 | Vendor   | FCC                                     | Model                                                                                        | Speed Data                                                                            | Version  | Shop                                                      | Openwrt Firmware                                                                                                                               | OEM Firmware                                                                                            |
 | -------- | --------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Totolink | FCC : X7DIP04433 , NCC : CCAP20LP1980T9 | [X5000R](https://www.totolink.net/data/upload/20200820/cebd64ca83fabb0c0f5abdd8c6dee828.pdf) | 2 * 2 , 11n HT40 , 11ac **VHT80** , 11ax **HE80** (AX1800) 2.4G 600Mbps + 5G 1200Mbps | snapshot | [PCHOME](https://24h.pchome.com.tw/prod/DRAF5L-A900B284Q) | [OpenWRT Snapshot](http://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-ramips-mt7621-totolink_x5000r-squashfs-sysupgrade.bin) | [Totolink Download](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/218/ids/36.html) |
 
 ## Cards
 
-| Vendor | FCC | Model | Speed Data |
-| ------ | --- | ----- | ----- |
+| Vendor | FCC              | Model | Speed Data                                   |
+| ------ | ---------------- | ----- | -------------------------------------------- |
 | Intel  | FCC : PD9AX210NG | AX210 | 2 * 2  , 11n HT40 , 11ac VHT160 , 11ax HE160 |
 
 ## Certifications
