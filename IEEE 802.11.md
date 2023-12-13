@@ -1,4 +1,4 @@
-# 802.11 Design Datasheets/Suggesties
+# 802.11 Design Datasheets/Suggests
 - Draft
   - Li-Fi (IEEE P802.11bb Draft 6~)
   - Wi-Fi 7 = 802.11be
@@ -58,15 +58,15 @@ Channel Number	Frequency Range (MHz)	Centre Frequency (MHz)	Availability
 ```
 
 1. [2.4 GHz Wi-Fi (802.11b/g/n) Channels and Frequency Band](https://www.everythingrf.com/community/2-4-ghz-wi-fi-802-11b-g-n-channels-and-frequency-band)
-### 5G
+### 5G Frequency
 
-- DFS(Dynamic Frequency Selection)
+- DFS (Dynamic Frequency Selection)
   - DFS Band → Scan radar every 60 sec → Transmit Delay (Online/Background Working) 
 - TPC (Transmit Power Control)
 - Both are for Weather radar.
 - Related 802.11h-2003 and 802.11a
 
-### 6G
+### 6G Frequency
 
 - Based station/Access point
   - AFC (Automated Frequency Control)
@@ -154,8 +154,7 @@ Channel Number	Frequency Range (MHz)	Centre Frequency (MHz)	Availability
      - 3x996, 484+3x996 at 320 MHz
 
 
-1. [IEEE 802.11be – Wi-Fi 7: New Challenges and
-Opportunities](https://arxiv.org/pdf/2007.13401.pdf)
+1. [IEEE 802.11be – Wi-Fi 7: New Challenges and Opportunities](https://arxiv.org/pdf/2007.13401.pdf)
 
 | MCS Index | DCM  | Modulation | Flow | Coding | RSSI Worst Min |
 | --------- | ---- | ---------- | ---- | ------ | -------------- |
@@ -295,7 +294,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 
 ## Tools and Hardware
 
-### OpenWRT
+### OpenWrt
 - Config : [Wi-Fi /etc/config/wireless](https://openwrt.org/docs/guide-user/network/wifi/basic)
 - Enable WPA3+802.11kvr : https://vicfree.com/2022/11/openwrt-wpa3-802.11kvr-ap-setup/
 ### Commercial 
@@ -324,7 +323,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | Wireshark                              | Debug          |
 |                                        |                |
 
-#### Total solution / Enterprise 
+#### Total solution / Enterprise
 
 | Name                      | Type     |
 | ------------------------- | -------- |
@@ -350,7 +349,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | CSL             | Tester |
 | Flurk           | Tester |
 
-#### Home/SOHO Wifi Router
+#### Home/SOHO Wi-Fi Router
 
 | Name               | Type          |
 | ------------------ | ------------- |
@@ -375,11 +374,11 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | -------------------------- | -------- | ---- | ------------------------------------------------------------------------------------------- |
 | Python-wifi-survey-heatmap | Analysis | Free | [jantman/python-wifi-survey-heatmap](https://github.com/jantman/python-wifi-survey-heatmap) |
 
-## OpenWRT Hardware
+## OpenWrt Hardware
 
 - HT40 = HT (modulation standard) + 40 MHz bandwidth.
 - Some of the products are not fully having those features.
-  - Like 802.11ax = HE160 , 802.11ac wave 2 = VHT160 , 802.11ac wave 1 = VHT80 
+  - Like 802.11ax = HE160, 802.11ac wave 2 = VHT160, 802.11ac wave 1 = VHT80 
 
 | Vendor   | FCC                                     | Model                                                                                        | Speed Data                                                                            | Version  | Shop                                                      | Openwrt Firmware                                                                                                                               | OEM Firmware                                                                                            |
 | -------- | --------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -391,7 +390,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | ------ | ---------------- | ----- | -------------------------------------------- |
 | Intel  | FCC : PD9AX210NG | AX210 | 2 * 2  , 11n HT40 , 11ac VHT160 , 11ax HE160 |
 
-## Certifications
+## Regulation
 RF Model Standard and Reports
 * US : [FCC ID Search](https://www.fcc.gov/oet/ea/fccid)
 * TW : [NCC 型式認證資料查詢](https://nccmember.ncc.gov.tw/Application/Fun/Fun016.aspx)
