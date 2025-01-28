@@ -359,14 +359,20 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | Zyxel (Taiwan)     | Device Vendor |
 | DrayTek (Taiwan)   | Device Vendor |
 | Tenda/騰達 (China) | Device Vendor |
-| Totolink (Korea)   | Device Vendor |
+| Totolink/Zioncom (Hong Kong/China)   | Device Vendor |
 | EDIMAX             | Device Vendor |
 | Mercusys           | Device Vendor |
 | NetGear            | Device Vendor |
 | HUAWEI (China)     | Device Vendor |
 | QNAP (Taiwan)      | Device Vendor |
 | TAMIO              | Device Vendor |
+| Xiaomi (China)     | Device Vendor |
 
+* Totolink/Zioncom
+  * It's original from ipTime (EFM Networks Co., Ltd) , South Korea .
+  * ZIONCOM HK ,Maxtop (Asia) Limited was established in 1999 .
+  * Zioncom created a brand, Totolink for exportation in 2011 . [Zioncom - Milestones](https://web.archive.org/web/20240413064627/https://zioncom.net/a/guanyuwomen/Milestones/)
+  * [2013 : Totolink.com.tw](https://web.archive.org/web/20130314154918/http://totolink.com.tw/about_1.php)
 
 ### Draft
 
@@ -391,6 +397,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 | Intel  | FCC : PD9AX210NG | AX210 | 2 * 2  , 11n HT40 , 11ac VHT160 , 11ax HE160 |
 
 ## Regulation
+
 RF Model Standard and Reports
 * US : [FCC ID Search](https://www.fcc.gov/oet/ea/fccid)
 * TW : [NCC 型式認證資料查詢](https://nccmember.ncc.gov.tw/Application/Fun/Fun016.aspx)
@@ -398,6 +405,11 @@ RF Model Standard and Reports
 * KR : [Search KC Certification Status](https://ccac.rra.go.kr/en/view/sub201020.jsp)
 * AU : [ERAC National Certification Database](https://equipment.erac.gov.au/Public/)
 * SG : [IMDA Equipment Search](https://eservice.imda.gov.sg/tls/searchEquipment.action)
+* EU/JP/UK : CE - [Certipedia](https://www.certipedia.com/)
+
+
+Wifi Alliance
+* [Wi-Fi CERTIFIED products](https://www.wi-fi.org/product-finder)
 
 # Ref
 
