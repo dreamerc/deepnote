@@ -406,7 +406,9 @@ RF Model Standard and Reports
 * AU : [ERAC National Certification Database](https://equipment.erac.gov.au/Public/)
 * SG : [IMDA Equipment Search](https://eservice.imda.gov.sg/tls/searchEquipment.action)
 * EU/JP/UK : CE - [Certipedia](https://www.certipedia.com/)
-
+* ID : SNI
+* MY : MCMC , [Model Enquiry](https://ecomm.sirim.my/SirimEnquiry/modelenquiry.aspx)
+* TH : NBTC
 
 Wifi Alliance
 * [Wi-Fi CERTIFIED products](https://www.wi-fi.org/product-finder)
