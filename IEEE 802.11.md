@@ -353,26 +353,29 @@ https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
 
 | Name               | Type          |
 | ------------------ | ------------- |
-| ASUS (Taiwan)      | Device Vendor |
-| D-Link (Taiwan)    | Device Vendor |
-| TP-Link (China)    | Device Vendor |
-| Zyxel (Taiwan)     | Device Vendor |
-| DrayTek (Taiwan)   | Device Vendor |
-| Tenda/騰達 (China) | Device Vendor |
-| Totolink/Zioncom (Hong Kong/China)   | Device Vendor |
-| EDIMAX             | Device Vendor |
-| Mercusys           | Device Vendor |
-| NetGear            | Device Vendor |
-| HUAWEI (China)     | Device Vendor |
-| QNAP (Taiwan)      | Device Vendor |
-| TAMIO              | Device Vendor |
-| Xiaomi (China)     | Device Vendor |
+| ASUS/華碩 (Taiwan) | Device Vendor |
+| D-Link/友訊科技 (Taiwan) | Device Vendor |
+| TP-Link (China) | Device Vendor |
+| Zyxel/合勤科技 (Taiwan) | Device Vendor |
+| DrayTek/居易科技 (Taiwan) | Device Vendor |
+| Tenda/腾达 (China) | Device Vendor |
+| Totolink/Zioncom (Hong Kong/China) | Device Vendor |
+| EDIMAX/訊舟科技 (Taiwan) | Device Vendor |
+| Mercusys/水星网络 (China) | Device Vendor |
+| NetGear (US) | Device Vendor |
+| HUAWEI/華為 (China) | Device Vendor |
+| QNAP (Taiwan) | Device Vendor |
+| TAMIO/塔米歐 (Taiwan) | Device Vendor |
+| Xiaomi/小米 (China) | Device Vendor |
 
 * Totolink/Zioncom
   * It's original from ipTime (EFM Networks Co., Ltd) , South Korea .
   * ZIONCOM HK ,Maxtop (Asia) Limited was established in 1999 .
   * Zioncom created a brand, Totolink for exportation in 2011 . [Zioncom - Milestones](https://web.archive.org/web/20240413064627/https://zioncom.net/a/guanyuwomen/Milestones/)
   * [2013 : Totolink.com.tw](https://web.archive.org/web/20130314154918/http://totolink.com.tw/about_1.php)
+* TAMIO
+  * NCC Applicant : 臺灣塔米歐實業股份有限公司
+  * Distributor History : TP-Link , TOTOLINK , HUAWEI
 
 ### Draft
 
